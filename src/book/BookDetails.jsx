@@ -10,9 +10,9 @@ export default function BookDetails(myObj) {
   const { state } = useLocation();
 
   
-  const notifyWishList = () => {
+  const notifyWishList = (name) => {
     
-    toast.info("Successfully added to the Cart/Wishlist");
+    toast.info("Book Name:" + name + " Successfully added to the Cart/Wishlist");
    };
 
   return (
@@ -62,9 +62,9 @@ export default function BookDetails(myObj) {
             </p>
 
             <div>
-              <button onClick={notifyWishList} className="btn btn-active mt-3 mr-2 p-3"> Wish to Read </button>
-
-              <button onClick={notifyWishList} className="btn btn-active mt-3 mr-2 p-3"> Add to Cart </button>
+              <button onClick={() => notifyWishList(state.myObj.bookName)} className="btn btn-active mt-3 mr-2 p-3"> Wish to Read </button>
+             
+              <button onClick={() => notifyWishList(state.myObj.bookName)} className="btn btn-active mt-3 mr-2 p-3"> Add to Cart </button>
               <ToastContainer position="bottom-right"/>
             </div>
           </div>

@@ -12,7 +12,7 @@ export default function BookDetails(myObj) {
   
   const notifyWishList = (name) => {
     
-    toast.info("Book Name:" + name + " Successfully added to the Cart/Wishlist");
+    toast.info("Book named:- "+ name + ", Successfully added to the Cart/Wishlist");
    };
 
   return (

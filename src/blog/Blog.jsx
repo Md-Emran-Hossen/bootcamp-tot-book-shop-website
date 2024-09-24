@@ -6,4 +6,5 @@ export default function Blog() {
         Welcome to Blog Page 
     </div>
   )
+  
 }

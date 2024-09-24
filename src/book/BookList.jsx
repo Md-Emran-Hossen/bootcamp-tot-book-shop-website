@@ -16,7 +16,8 @@ export default function BookList() {
     })
 
     return (
-
+        <>
+        <p className="text-3xl font-extrabold text-center text-yellow-600 m-5 p-5"> BOOK LIST</p>
         <div className="container grid grid-cols-1 lg:grid-cols-3 gap-5 mx-auto">
 
             {books.map((book) => {
@@ -50,5 +51,6 @@ export default function BookList() {
             })}
 
         </div>
+     </>
     )
 }

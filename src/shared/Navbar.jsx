@@ -10,7 +10,7 @@ export default function Navbar() {
                     <div className="navbar-start">
 
                         <Link to={ROUTES.HOME}>
-                            <a className="btn btn-ghost font-bold text-xs lg:text-2xl">Book Shop</a>
+                            <a className="btn btn-ghost font-sans text-xs lg:text-2xl">BOOK SHOP</a>
                         </Link>
 
                         <div className="dropdown">

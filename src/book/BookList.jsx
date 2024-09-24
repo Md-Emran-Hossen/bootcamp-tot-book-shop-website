@@ -30,14 +30,13 @@ export default function BookList() {
                                     alt={book.bookName}
                                     className="w-56 rounded h-36" />
                             </figure>
-                            <div className="card-body ml-6">
-                                <h2 className="card-title">Book Name: {book.bookName}</h2>
-                                <p><span> Tags: {book.tags[0]}  </span> </p>
-                                <p><span> Author: {book.author} </span> </p>
-                                <p><span>Category: {book.category} </span></p>
-                                <p><span>Rating: {book.rating} </span></p>
+                            <div className="card-body ml-7">
+                                <p> <span className="font-bold">Book Name:</span> {book.bookName}</p>
+                                <p><span className="font-bold"> Tags: </span> {book.tags[0]} </p>
+                                <p><span className="font-bold"> Author:  </span> {book.author} </p>
+                                <p><span className="font-bold">Category: </span> {book.category} </p>
+                                <p><span className="font-bold">Rating: </span> {book.rating} </p>
                                 <div class="card-actions">
-
                                     <Link to={ROUTES.SINGLE_BOOKS.DYNAMIC(book.bookId)}
                                         state={{ myObj: book }}
                                         className="hover:text-orange-500 text-xl font-bold bg-orange-100 cursor-pointer rounded p-3">

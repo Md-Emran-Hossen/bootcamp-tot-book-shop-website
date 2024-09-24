@@ -4,22 +4,22 @@ import image from '../../public/images/bookstore.jpg'
 export default function Banner() {
     return (
         <>
-           <div className="container mx-auto">
-            <div className="hero bg-base-200 rounded p-5">
+           <div className="container mx-auto m-5">
+            <div className="hero bg-base-200 rounded">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <diV className="w-1/2">
                         <img
                             src= {image}
-                            className="rounded-lg shadow-2xl h-48"
+                            className="rounded-md shadow-2xl h-48"
                         />
                     </diV>
 
-                    <div className="w-1/2">
-                        <h1 className="font-bold text-justify">
+                    <div className="w-1/2 ml-2">
+                        <h1 className="font-bold text-left">
                             Unlock a world of Stories- Find Your Next Favorite Book at &nbsp;
                             <span className="font-bold text-green-600">BOOK SHOP</span>
                         </h1>
-                        <button className="btn btn-active text-xl p-2 m-2">Buy Book</button>
+                        <button className="btn btn-active text-xl mt-3 p-2">Buy Book</button>
                     </div>
 
                 </div>

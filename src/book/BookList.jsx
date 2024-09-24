@@ -38,7 +38,7 @@ export default function BookList() {
                                 <p><span>Rating: {book.rating} </span></p>
                                 <div class="card-actions">
 
-                                    <Link to={ROUTES.SINGLE_BOOKS.DYNAMIC(book.bookName)}
+                                    <Link to={ROUTES.SINGLE_BOOKS.DYNAMIC(book.bookId)}
                                         state={{ myObj: book }}
                                         className="hover:text-orange-500 text-xl font-bold bg-orange-100 cursor-pointer rounded p-3">
                                         Book Details

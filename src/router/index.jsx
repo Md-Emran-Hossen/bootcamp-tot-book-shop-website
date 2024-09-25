@@ -8,13 +8,15 @@ import BookDetails from '../book/BookDetails';
 import BookList from '../book/BookList';
 import About from '../about/About';
 import Blog from '../blog/Blog';
+import ErrorPage from '../errorPage/ErrorPage';
 
 const router = createBrowserRouter([
     {
       /* path: "/", */
-      path: `${ROUTES.HOME}`,
-  
+       path: `${ROUTES.HOME}`,
+      
       element: <CommonLayout />, 
+      errorElement: <ErrorPage></ErrorPage>,
   
       children: [
        

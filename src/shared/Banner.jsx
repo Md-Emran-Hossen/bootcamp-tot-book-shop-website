@@ -10,7 +10,7 @@ export default function Banner() {
                     <diV className="w-1/2">
                         <img
                             src= {image}
-                            className="rounded-md shadow-2xl h-56"
+                            className="rounded-md shadow-2xl w-full mt-10 h-60"
                         />
                     </diV>
 

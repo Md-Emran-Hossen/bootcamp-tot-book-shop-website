@@ -1,20 +1,53 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { ROUTES } from '../routes'
+// import React from 'react'
+import { Link, NavLink, useNavigate } from "react-router-dom"
+import { AuthContext } from "../provider/AuthProvider";
+import { useContext } from "react";
+import logo from "../assets/logo.png";
 
-export default function Navbar() {
+const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const handleSignOut = () => {
+        logOut()
+            .then(() => {
+                navigate("/login");
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+
+    const navLink = (
+        <>
+            <li>
+                <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+                <NavLink to="/books">Book</NavLink>
+            </li>
+            <li>
+                <NavLink to="/blog">Blog</NavLink>
+            </li>
+            <li>
+                <NavLink to="/faq">Faq</NavLink>
+            </li>
+        </>
+    );
+
+
     return (
         <div>
             <section className="fixed container mx-auto top-0 left-0 z-50">
-                <div className="navbar bg-base-100">
-                    <div className="navbar-start">
-
-                        <Link to={ROUTES.HOME}>
-                            <a className="btn btn-ghost font-sans text-xs lg:text-2xl">BOOK SHOP</a>
+                <div className="navbar grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-base-100 gap-1 lg:gap-20">
+                    <div className="navbar-start w-full">
+                        <img src={logo} alt="book" className="w-20" />
+                        <Link to="/">
+                            <a className="btn btn-ghost font-sans text-xs lg:text-4xl text-yellow-600">BOOK SHOP</a>
                         </Link>
 
                         <div className="dropdown">
-                            <div tabindex="0" role="button" className="btn btn-ghost lg:hidden">
+                            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="h-5 w-5"
@@ -22,39 +55,49 @@ export default function Navbar() {
                                     viewBox="0 0 24 24"
                                     stroke="currentColor">
                                     <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
                                         d="M4 6h16M4 12h8m-8 6h16" />
                                 </svg>
                             </div>
                             <ul
-                                tabindex="0"
+                                tabIndex={0}
                                 className="menu menu-sm dropdown-content bg-base-300 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                                <li><Link to={ROUTES.HOME} className="hover:text-orange-500 cursor-pointer">Home</Link></li>
-                                <li><Link to={ROUTES.ABOUT} className="hover:text-orange-500 cursor-pointer">About</Link></li>
-                                <li><Link to={ROUTES.BLOG} className="hover:text-orange-500 cursor-pointer">Blog</Link></li>
-                                <li><Link to={ROUTES.FAQ} className="hover:text-orange-500 cursor-pointer">FAQ</Link></li>
+                                {navLink}
                             </ul>
                         </div>
 
-
-
                     </div>
-                    <div className="navbar-end hidden lg:flex">
+                    <div className="navbar-end hidden lg:flex w-full">
                         <ul className="menu menu-horizontal px-1">
-                            <li><Link to={ROUTES.HOME} className="hover:text-orange-500 cursor-pointer">Home</Link></li>
-                            <li><Link to={ROUTES.ABOUT} className="hover:text-orange-500 cursor-pointer">About</Link></li>
-                            <li><Link to={ROUTES.BLOG} className="hover:text-orange-500 cursor-pointer">Blog</Link></li>
-                            <li><Link to={ROUTES.FAQ} className="hover:text-orange-500 cursor-pointer">FAQ</Link></li>
+                            {navLink}
                         </ul>
                     </div>
-                    <div className="navbar-end">
-                        <a className="btn mr-1 w-20 lg:w-24 text-xs">Buy Book</a>
-                        <a className="btn ml-1 w-16 lg:w-20 text-xs">Sign In</a>
+
+                    <div className="flex justify-start lg:justify-end">
+                        {
+                            user ? (
+                                <div className="flex items-center space-x-2">
+                                    <span className="text-sm">{user.email}</span>
+                                    <img src={user?.photoURL} className="w-7 rounded-full"></img>
+                                    {/* <Link to="/login"> */}
+                                    <button onClick={handleSignOut} className="btn btn-active text-sm"> Logout </button>
+                                    {/* </Link> */}
+                                </div>
+
+                            ) : (
+                                <div>
+                                    <Link to="/login">
+                                        <button className="btn btn-active btn-accent"> Login </button>
+                                    </Link>
+                                </div>
+                            )
+                        }
                     </div>
                 </div>
             </section>
         </div>
     )
 }
+export default Navbar;

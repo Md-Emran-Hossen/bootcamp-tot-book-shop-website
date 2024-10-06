@@ -1,13 +1,19 @@
-
-import { useLocation } from 'react-router-dom';
+import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "../shared/Navbar";
 
-export default function BookDetails() {
+const BookDetails = () => {
 
-  const { state } = useLocation();
+  const bookDetails = useLoaderData();
+  const { id } = useParams();
+  console.log(id);
+  console.log(bookDetails);
 
-  const{image, bookName, author, category, publisher, review, tags, totalPages, yearOfPublishing, rating} = state.myObj;
+
+  // const { state } = useLocation();
+
+  const{image, bookName, author, category, publisher, review, tags, totalPages, yearOfPublishing, rating} = bookDetails;
       
   const notifyWishList = (name) => {
     
@@ -16,12 +22,12 @@ export default function BookDetails() {
 
   return (
     <>
-    {/* <h1> Value: {bookName}</h1> */}
+    <Navbar></Navbar>
       <div className="hero w-5/6 mx-auto m-3 p-3">
         <div className="hero-content flex-col lg:flex-row">
           <img
             src={`${image}`} alt={image}
-            className="max-w-sm rounded-lg shadow-2xl h-56 lg:h-96 w-56 lg:w-96" 
+            className="max-w-sm rounded shadow-2xl h-56 lg:h-96 w-56 lg:w-96" 
           />
           <div>
             <p className="text-xl">
@@ -74,4 +80,4 @@ export default function BookDetails() {
     </>
   )
 }
-
+export default BookDetails;

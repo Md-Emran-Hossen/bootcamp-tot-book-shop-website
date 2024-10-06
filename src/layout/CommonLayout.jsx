@@ -1,18 +1,11 @@
-import React from 'react'
-import Navbar from '../shared/Navbar'
+// import React from 'react'
+
 import { Outlet } from 'react-router-dom'
-import Banner from '../shared/Banner'
 import Footer from '../shared/Footer'
-
-
 
 export default function commonLayout() {
   return (
     <>
-     <Navbar></Navbar>
-     <Banner></Banner>
-     
-     {/* <BannerDynamic></BannerDynamic> */}
      <Outlet></Outlet>
      <Footer></Footer>
     </>  

@@ -21,7 +21,7 @@ const HowItWorks = () => {
                         <div className="card-body">
                             <h2 className="card-title">Novels!</h2>
                             <p>A book is a medium for recording information in the form of writing or images.</p>
-                            <div className="card-actions justify-end">
+                            <div className="card-actions justify-center">
                                 <button className="btn btn-primary">Buy Now</button>
                             </div>
                         </div>
@@ -38,8 +38,8 @@ const HowItWorks = () => {
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title">Literatures!</h2>
-                            <p>Literature is any collection of written work. orm of writing or</p>
-                            <div className="card-actions justify-end">
+                            <p>Literature is any collection of written work. orm of writing or relevant theories, methods</p>
+                            <div className="card-actions justify-center">
                                 <button className="btn btn-primary">Buy Now</button>
                             </div>
                         </div>
@@ -55,8 +55,8 @@ const HowItWorks = () => {
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title">Poems!</h2>
-                            <p>A Poem About A Book. Books are magical and can do so much.</p>
-                            <div className="card-actions justify-end">
+                            <p>A Poem About A Book. Books are magical and can do so much. </p>
+                            <div className="card-actions justify-center">
                                 <button className="btn btn-primary">Buy Now</button>
                             </div>
                         </div>

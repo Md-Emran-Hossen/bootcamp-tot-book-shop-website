@@ -37,14 +37,14 @@ const BookList = () => {
                                         alt={book.bookName}
                                         className="w-56 rounded h-36" />
                                 </figure>
-                                <div className="card-body ml-7">
+                                <div className="card-body text-center">
                                     <p> <span className="font-bold">Book Name:</span> {book.bookName}</p>
                                     <p><span className="font-bold"> Tags: </span> {book.tags[0]} </p>
                                     <p><span className="font-bold"> Author:  </span> {book.author} </p>
                                     <p><span className="font-bold">Category: </span> {book.category} </p>
                                     <p><span className="font-bold">Rating: </span> {book.rating} </p>
 
-                                    <div className="card-actions">
+                                    <div className="m-5">
                                         <Link to={`/book/${book.bookId}`}
                                             className="hover:text-orange-500 text-xl font-bold bg-orange-100 cursor-pointer rounded p-3">
                                             Book Details

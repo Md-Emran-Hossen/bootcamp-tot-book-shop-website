@@ -3,10 +3,14 @@
 const ContactUs = () => {
     return (
         <div>
-            <h2 className="text-4xl text-center font-bold text-yellow-500 mt-10 pt-10"> Please! Feel free to <span className="font-bold text-green-600">Contact Us </span></h2>
-            <div className="bg-white">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="card w-full max-w-sm shadow-xl">
+            <div className="w-full bg-base-200">
+                <h2 className="text-4xl text-center font-bold text-yellow-500 m-5 p-5"> Contact Us </h2>
+            </div>
+
+            <div className="hero bg-white min-h-screen">
+                <div className="hero-content flex-col-reverse lg:flex-row-reverse">
+
+                    <div className="card w-full max-w-md shrink-0">
                         <form className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -40,6 +44,26 @@ const ContactUs = () => {
                             </div>
                         </form>
                     </div>
+                    <div className="text-left">
+                        <h1 className="text-2xl font-bold">For any query! </h1>
+                        <h2>
+                            <span className="text-xl font-bold"> Please!  </span>
+                        </h2>
+                        <h2 className="text-green-600 text-4xl font-bold">
+                            Contact us!
+                        </h2>
+                        <p className="py-6 text-left text-xl">
+                           <span className="text-green-400 font-semibold"> Hours of operation: </span>  This tells customers 
+                            when they can contact your business. <br />
+                            <span className="text-green-400 font-semibold"> Phone number and email address: </span>
+                            Customers can contact your business directly. <br />
+                            <span className="text-green-400 font-semibold"> Response time: </span>
+                            Let customers know when they should expect a response. <br />
+                            <span className="text-green-400 font-semibold"> Location: </span>
+                            Build trust with customers by showing you are legitimate.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </div>

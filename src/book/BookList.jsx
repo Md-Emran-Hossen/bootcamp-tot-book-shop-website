@@ -19,7 +19,7 @@ const BookList = () => {
 
     return (
         <>
-            <Navbar></Navbar>
+            
             <Banner></Banner>
             <HowItWorks></HowItWorks>
             {/* <p className="text-3xl font-extrabold text-center text-yellow-600 m-5 p-5"> BOOK LIST</p> */}

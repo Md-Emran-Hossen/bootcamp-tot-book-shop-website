@@ -38,7 +38,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <section className="fixed container mx-auto top-0 left-0 z-50">
+            <section className="fixed w-full mx-auto top-0 left-0 z-50">
                 <div className="navbar grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-base-100 gap-1">
                     <div className="navbar-start w-full">
                         <img src={logo} alt="book" className="w-20 ml-2 pl-2" />
@@ -75,7 +75,7 @@ const Navbar = () => {
                         </ul>
                     </div>
 
-                    <div className="flex justify-start lg:justify-end ml-2 pl-2">
+                    <div className="flex justify-start md:justify-end lg:justify-end ml-2 pl-2">
                         {
                             user ? (
                                 <div className="flex items-center space-x-2">

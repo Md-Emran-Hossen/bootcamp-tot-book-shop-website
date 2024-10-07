@@ -4,7 +4,7 @@ import image from '../../public/images/bookstore.jpg'
 export default function Banner() {
     return (
         <>
-           <div className="w-full mx-auto mt-7 p-5">
+           <div className="w-full mx-auto mt-10 p-5">
             <div className="hero bg-base-200 rounded">
                 <div className="hero-content flex-col md:flex-col lg:flex-row-reverse">
                     <diV className="w-1/2">

@@ -9,8 +9,6 @@ export default function Blog() {
     <div className="font-bold text-center text-4xl text-green-600 py-20">
       Welcome to Blog Page
     </div>
-    {/* <Footer></Footer> */}
   </>
   )
-
 }
